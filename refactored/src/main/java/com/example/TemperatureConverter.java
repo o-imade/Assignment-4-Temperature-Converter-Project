@@ -1,4 +1,4 @@
-// File: TemperatureConverter.java
+package com.example;// File: com.example.TemperatureConverter.java
 // Description: A temperature converter that converts into different temperature using formulas.
 // Date: [11/15/2025]
 
@@ -8,10 +8,10 @@ import java.util.Scanner;
 public class TemperatureConverter
 {
     //these values are the options that the user types to select the type of conversion they would like to make
-    private static final int optionConvertToFahrenheit = 1; //Celsius to Fahrenheit
-    private static final int optionConvertToCelsius = 2; //Fahrenheit to Celsius
-    private static final int optionConvertToKelvin = 3; //Celsius to Kelvin
-    private static final int optionExit = 4; //Exit the loop
+    private static final int OPTION_CELSIUS_TO_FAHRENHEIT = 1; //Celsius to Fahrenheit
+    private static final int OPTION_FAHRENHEIT_TO_CELSIUS = 2; //Fahrenheit to Celsius
+    private static final int OPTION_CELSIUS_TO_KELVIN = 3; //Celsius to Kelvin
+    private static final int OPTION_EXIT = 4; //Exit the loop
 
     /**
      *This public method will convert Celsius to Fahrenheit
@@ -49,10 +49,10 @@ public class TemperatureConverter
      */
     public static void instructionMessage()
     {
-        System.out.println("[" + optionConvertToFahrenheit + "] Convert Celsius to Fahrenheit" +
-                           "\n[" + optionConvertToCelsius + "] convert Fahrenheit to Celsius" +
-                           "\n[" + optionConvertToKelvin + "] convert Celsius to Kelvin" +
-                           "\n[" + optionExit + "] Exit");
+        System.out.println("[" + OPTION_CELSIUS_TO_FAHRENHEIT + "] Convert Celsius to Fahrenheit" +
+                           "\n[" + OPTION_FAHRENHEIT_TO_CELSIUS + "] convert Fahrenheit to Celsius" +
+                           "\n[" + OPTION_CELSIUS_TO_KELVIN + "] convert Celsius to Kelvin" +
+                           "\n[" + OPTION_EXIT + "] Exit");
     }
 
     /**
@@ -77,7 +77,7 @@ public class TemperatureConverter
         //this integer will represent the users input from the scanner object user_input
         int userChoice = 0;
 
-        while(!(userChoice == optionExit)) //if the users choice does not equal the exit option
+        while(!(userChoice == OPTION_EXIT)) //if the users choice does not equal the exit option
         {
             try
             {
@@ -88,20 +88,20 @@ public class TemperatureConverter
                 //this switch statement matches the users input to the conversion or exit method
                 switch(userChoice)
                 {
-                    case optionConvertToFahrenheit:
+                    case OPTION_CELSIUS_TO_FAHRENHEIT:
                         System.out.print("\nCelsius: "); //prompt the user to input a temperature in Celsius
                         System.out.println("Fahrenheit: " + celsiusToFahrenheit(user_input.nextDouble()) + "\n"); //Convert Celsius to Fahrenheit
                         break;
-                    case optionConvertToCelsius:
+                    case OPTION_FAHRENHEIT_TO_CELSIUS:
                         System.out.print("\nFahrenheit: "); //prompt the user to input a temperature in Fahrenheit
                         System.out.println("Celsius: " + fahrenheitToCelsius(user_input.nextDouble()) + "\n"); //Convert Fahrenheit to Celsius
                         break;
-                    case optionConvertToKelvin:
+                    case OPTION_CELSIUS_TO_KELVIN:
                         System.out.print("\nCelsius: "); //prompt the user to input a temperature in Celsius
                         System.out.println("Kelvin: " + celsiusToKelvin(user_input.nextDouble()) + "\n"); //Convert Celsius to Kelvin
                         break;
                     default:
-                        if (userChoice != optionExit) //if the user wants to exit the program loop do not print Invalid input
+                        if (userChoice != OPTION_EXIT) //if the user wants to exit the program loop do not print Invalid input
                             System.out.println("\nInvalid input\n"); //if the user types a number that is not any of the selections print this message
                         break;
                 }
